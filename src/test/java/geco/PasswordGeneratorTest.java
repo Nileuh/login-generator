@@ -15,7 +15,7 @@ public class PasswordGeneratorTest {
         //GIVEN on souhaite générer un mot de passe aléatoire
         //WHEN on instancie PasswordGenerator
         PasswordGenerator passwordGenerator = new PasswordGenerator();
-        String motDePasseGeneré = passwordGenerator.generate();
+        String motDePasseGeneré = passwordGenerator.getRandomPassword();
         //THEN on devrait avoir un mot de passe généré
         assertNotNull("Il n'y a pas de mot de passe généré", motDePasseGeneré);
     }

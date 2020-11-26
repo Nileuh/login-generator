@@ -9,10 +9,10 @@ public class PasswordGenerator {
 
     }
 
-    public String generate(){
+    public String getRandomPassword(){
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
-        int targetStringLength = 10;
+        int targetStringLength = 8;
         Random random = new Random();
 
         String generatedString = random.ints(leftLimit, rightLimit + 1)
