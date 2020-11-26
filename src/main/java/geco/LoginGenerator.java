@@ -9,12 +9,14 @@ import java.util.regex.Pattern;
 public class LoginGenerator {
 
     private LoginService loginService;
+    private int nbHomonyme;
 
     /**
      * Construit un login generator
      * @param loginService le service de login
      */
     public LoginGenerator(LoginService loginService) {
+        this.nbHomonyme=0;
         this.loginService = loginService;
     }
 
@@ -38,7 +40,9 @@ public class LoginGenerator {
         String n = deAccent(nom.substring(0,3).toUpperCase());
         String login = p+n ;
         if (loginService.loginExists(login)) {
-            login = login + "1" ;
+            nbHomonyme = loginService.findAllLoginsStartingWith(login).size();
+            login = login + nbHomonyme ;
+            nbHomonyme++;
         }
         loginService.addLogin(login);
         return login;
