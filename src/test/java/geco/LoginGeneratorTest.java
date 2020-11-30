@@ -57,4 +57,14 @@ public class LoginGeneratorTest {
         //THEN on devrait avoir PDUR
         assertEquals("Mauvaise génération de login", "PDUR", loginGenerator.generateLoginForNomAndPrenom(nom, prenom));
     }
+
+    @Test
+    public void CT5(){
+        //GIVEN un prénom et un nom
+        String prenom ="Paul";
+        String nom = "Du";
+        //WHEN on génère un login
+        //THEN on devrait avoir PDU
+        assertEquals("Mauvaise génération de login", "PDU", loginGenerator.generateLoginForNomAndPrenom(nom, prenom));
+    }
 }
